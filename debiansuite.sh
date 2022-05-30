@@ -1,6 +1,6 @@
 #i plan to hash the file after pulling it from github then compare that to a verified copy
 sudo apt update && sudo apt upgrade && apt install wget apt-transport-https curl aptitude terminator xfburn gparted dolphin gnupg &&
-apt install sddm xorg kde-plasma-desktop kde-window-manager plasma-nm --no-install-recommends &&
+apt install sddm xorg kde-plasma-desktop kwin-x11 kwin-wayland plasma-nm --no-install-recommends && apt purge ksys* kwallet* termit* &&
 
 #flatpaks
 sudo apt install flatpak &&
