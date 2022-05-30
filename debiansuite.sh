@@ -1,11 +1,11 @@
 #i plan to hash the file after pulling it from github then compare that to a verified copy
 sudo apt update && sudo apt upgrade
-apt install sddm xorg kde-plasma-desktop kde-window-manager
+apt install sddm xorg kde-plasma-desktop kde-window-manager aptitude wget curl --no-install-recommends
 
 #for kde bismuth tiling extension for kwin
 echo "deb http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list > /dev/null
 wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
-sudo apt update && sudo apt install kwin-bismuth
+sudo apt update && sudo aptitude install kwin-bismuth
 
 #flatpak and repo
 sudo apt install flatpak
