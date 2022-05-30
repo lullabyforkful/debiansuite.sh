@@ -1,29 +1,25 @@
 #i plan to hash the file after pulling it from github then compare that to a verified copy
-sudo apt update && sudo apt upgrade
-apt install sddm xorg kde-plasma-desktop kde-window-manager aptitude wget curl --no-install-recommends
+sudo apt update && sudo apt upgrade && apt install wget curl apt-transport-https aptitude terminator xfburn gparted dolphin gnupg &&
+apt install sddm xorg kde-plasma-desktop kde-window-manager plasma-nm --no-install-recommends &&
 
-#for kde bismuth tiling extension for kwin
-echo "deb http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list > /dev/null
-wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
-sudo apt update && sudo aptitude install kwin-bismuth
-
-#flatpak and repo
-sudo apt install flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-exit
+#flatpaks
+sudo apt install flatpak &&
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &&
 
 # put a #in front if u dont want it
-flatpak install flathub md.obsidian.Obsidian
-flatpak install flathub com.spotify.Client
-flatpak install flathub com.todoist.Todoist
-flatpak install flathub io.freetubeapp.FreeTube
-flatpak install flathub org.onlyoffice.desktopeditors
-flatpak install flathub com.github.eneshecan.WhatsAppForLinux
-flatpak install flathub network.loki.Session
-flatpak install flathub com.discordapp.Discord 
+flatpak install flathub md.obsidian.Obsidian &&
+flatpak install flathub com.spotify.Client &&
+flatpak install flathub com.todoist.Todoist &&
+flatpak install flathub io.freetubeapp.FreeTube &&
+flatpak install flathub org.onlyoffice.desktopeditors &&
+flatpak install flathub com.github.eneshecan.WhatsAppForLinux &&
+flatpak install flathub network.loki.Session &&
+flatpak install flathub com.discordapp.Discord  &&
 
-sudo su
-sudo apt install plasma-nm terminator xfburn gparted caja caja-open-terminal caja-admin caja-gtkhash
+#tiling manager: bismuth for kde
+echo "deb http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list > /dev/null
+wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
+sudo apt update && sudo apt install kwin-bismuth
 
 #for librewolf
 distro=$(if echo " bullseye focal impish jammy uma una " | grep -q " $(lsb_release -sc) "; then echo $(lsb_release -sc); else echo focal; fi)
