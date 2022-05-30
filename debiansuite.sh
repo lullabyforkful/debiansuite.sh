@@ -45,7 +45,7 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
 
 #for proprietary wifi drivers only
 
-cd /etc/apt/sourceslist.d/ &&
+cd /etc/apt/sources.list.d/ &&
 
 echo "deb http://deb.debian.org/debian bullseye main contrib non-free
 deb-src http://deb.debian.org/debian bullseye main contrib non-free
