@@ -1,6 +1,6 @@
 #i plan to hash the file after pulling it from github then compare that to a verified copy
 sudo apt update && sudo apt upgrade && apt install wget apt-transport-https curl aptitude terminator xfburn gparted dolphin gnupg &&
-apt install sddm xorg kde-plasma-desktop kwin-x11 kwin-wayland plasma-nm --no-install-recommends && apt purge ksys* kwallet* termit* &&
+apt install sddm xorg kde-plasma-desktop kwin-x11 kwin-wayland plasma-nm --no-install-recommends && apt purge ksys* kwallet* termit* kdeconnect* konqueror* kinfocenter kfind* kwrite* &&
 
 #flatpaks
 sudo apt install flatpak &&
@@ -39,7 +39,7 @@ wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signa
 cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null &&
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\ &&
   sudo tee -a /etc/apt/sources.list.d/signal-xenial.list &&
-  sudo apt update && sudo apt install signal-desktop &&
+sudo apt update && sudo apt install signal-desktop &&
 
 #for session messenger idk commands that well will google another time
 
